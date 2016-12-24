@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="20dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/list_product_textview_produto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produto 0"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/list_product_textview_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_product_textview_produto"
+        android:layout_toLeftOf="@+id/list_product_imageview_mais_barato"
+        android:text="@string/list_peso"
+        android:textSize="@dimen/list_product_size"/>
+
+    <TextView
+        android:id="@+id/list_product_textview_preco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list_preco"
+        android:layout_below="@+id/list_product_textview_produto"
+        android:textSize="@dimen/list_product_size"/>
+
+    <TextView
+        android:id="@+id/list_produto_textview_valor_produto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_product_textview_peso"
+        android:text="@string/list_valor_produto"/>
+
+    <ImageView
+        android:id="@+id/list_product_imageview_mais_barato"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:src="@drawable/ic_check_circle"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

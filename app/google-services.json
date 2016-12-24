@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "915476478287",
+    "firebase_url": "https://pricecompare-e0707.firebaseio.com",
+    "project_id": "pricecompare-e0707",
+    "storage_bucket": "pricecompare-e0707.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915476478287:android:b30e0e6ba1716c50",
+        "android_client_info": {
+          "package_name": "br.com.lipeduoli.pricecompare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915476478287-e8dmm7srab0libqnjd157bqo5r9c15qe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.lipeduoli.pricecompare",
+            "certificate_hash": "FEC0DE3AB4276FA82647C98685CE7572AB028D81"
+          }
+        },
+        {
+          "client_id": "915476478287-30gbkgos2ev6vv4eijirfprruna9ps1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyButFbsdXwOcL5SgRgGWLOeFqWR7VUjnEQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915476478287-30gbkgos2ev6vv4eijirfprruna9ps1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

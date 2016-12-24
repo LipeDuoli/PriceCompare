@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PriceCompare</string>
+    <string name="action_clean">Limpa Lista</string>
+    <string name="list_peso">Quantidade: %1$s%2$s</string>
+    <string name="list_preco">Preço: %s</string>
+    <string name="list_valor_produto">Preço por %1$s: %2$s</string>
+    <string name="g">g</string>
+    <string name="kg">Kg</string>
+    <string name="l">L</string>
+    <string name="ml">mL</string>
+    <string name="un">Un</string>
+</resources>

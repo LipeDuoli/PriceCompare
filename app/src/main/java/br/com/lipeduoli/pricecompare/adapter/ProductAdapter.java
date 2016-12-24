@@ -1,0 +1,100 @@
+package br.com.lipeduoli.pricecompare.adapter;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.List;
+
+import br.com.lipeduoli.pricecompare.R;
+import br.com.lipeduoli.pricecompare.model.Product;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+/**
+ * Created by liped on 05/07/2016.
+ */
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> implements Serializable {
+
+    private Context mContext;
+    private List<Product> mProductList;
+
+    public ProductAdapter(Context context, List<Product> products) {
+        this.mContext = context;
+        this.mProductList = products;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_product, null, false);
+        return new ViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Product product = mProductList.get(position);
+
+        if (!product.getNome().isEmpty()){
+            holder.mProduto.setText(product.getNome());
+        } else {
+            String nomeProduto = "Produto " + (position + 1);
+            holder.mProduto.setText(nomeProduto);
+        }
+
+        holder.mPeso.setText(String.format(mContext.getString(R.string.list_peso), Integer.toString(product.getPeso()), product.getTipo()));
+        holder.mPreco.setText(String.format(mContext.getString(R.string.list_preco), doubleToCurrency(product.getPreco(), 2)));
+
+        holder.mValorProduto.setText(String.format(mContext.getString(R.string.list_valor_produto), product.getTipo(), doubleToCurrency(product.getValorPorPeso(), 3)));
+
+        if (product.isMenorValor()){
+            holder.mMaisBarato.setVisibility(View.VISIBLE);
+        } else {
+            holder.mMaisBarato.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return mProductList.size();
+    }
+
+
+    public void addItem(Product product) {
+        mProductList.add(product);
+        notifyDataSetChanged();
+    }
+
+    private String doubleToCurrency(BigDecimal value, int numberOfDigits) {
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        format.setMinimumFractionDigits(numberOfDigits);
+        return format.format(value);
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+
+        @BindView(R.id.list_product_textview_produto)
+        TextView mProduto;
+        @BindView(R.id.list_product_textview_peso)
+        TextView mPeso;
+        @BindView(R.id.list_product_textview_preco)
+        TextView mPreco;
+        @BindView(R.id.list_produto_textview_valor_produto)
+        TextView mValorProduto;
+        @BindView(R.id.list_product_imageview_mais_barato)
+        ImageView mMaisBarato;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+
+    }
+}
