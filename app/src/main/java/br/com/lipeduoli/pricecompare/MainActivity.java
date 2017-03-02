@@ -82,8 +82,6 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
                 product.setMenorValor(true);
                 mProdutoMaisBarato = product;
                 return product;
-            } else {
-                mProductList.get(mProductList.indexOf(mProdutoMaisBarato)).setMenorValor(true);
             }
         }
         product.setMenorValor(false);
