@@ -15,11 +15,19 @@
       },
       "oauth_client": [
         {
+          "client_id": "915476478287-1tp9tck8iinls44rb87b0i2cve7vae4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.lipeduoli.pricecompare",
+            "certificate_hash": "ceab6b7c410aa9a589e2ef62a1e7ba834e990079"
+          }
+        },
+        {
           "client_id": "915476478287-e8dmm7srab0libqnjd157bqo5r9c15qe.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "br.com.lipeduoli.pricecompare",
-            "certificate_hash": "FEC0DE3AB4276FA82647C98685CE7572AB028D81"
+            "certificate_hash": "fec0de3ab4276fa82647c98685ce7572ab028d81"
           }
         },
         {
