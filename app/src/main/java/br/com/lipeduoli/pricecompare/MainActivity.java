@@ -19,6 +19,7 @@ import java.util.List;
 import br.com.lipeduoli.pricecompare.adapter.ProductAdapter;
 import br.com.lipeduoli.pricecompare.dialog.DialogAddProduct;
 import br.com.lipeduoli.pricecompare.model.Product;
+import br.com.lipeduoli.pricecompare.tools.DividerItemDecoration;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         mProductAdapter = new ProductAdapter(this, mProductList);
         mProductListView.setHasFixedSize(true);
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
+        mProductListView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
         mProductListView.setAdapter(mProductAdapter);
 
     }
