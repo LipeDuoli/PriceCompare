@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     RecyclerView mProductListView;
 
     private ProductAdapter mProductAdapter;
-    private List<Product> mProductList;
-    private Product mProdutoMaisBarato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +45,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        mProductList = new ArrayList<>();
-        mProductAdapter = new ProductAdapter(this, mProductList);
+        mProductAdapter = new ProductAdapter(this, new ArrayList<Product>());
         mProductListView.setHasFixedSize(true);
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
         mProductListView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
@@ -71,23 +68,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
 
     @Override
     public void onDialogPositiveClick(Product product) {
-        Product produtoVerificado = verificaMenorValorProduto(product);
-        mProductAdapter.addItem(produtoVerificado);
-    }
-
-    private Product verificaMenorValorProduto(Product product) {
-        if (mProdutoMaisBarato == null){
-            mProdutoMaisBarato = product;
-        } else {
-            if (product.getValorPorPeso().compareTo(mProdutoMaisBarato.getValorPorPeso()) == -1){
-                mProductList.get(mProductList.indexOf(mProdutoMaisBarato)).setMenorValor(false);
-                product.setMenorValor(true);
-                mProdutoMaisBarato = product;
-                return product;
-            }
-        }
-        product.setMenorValor(false);
-        return product;
+        mProductAdapter.addItem(product);
     }
 
     @Override
@@ -100,9 +81,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_clean:
-                mProductList.clear();
-                mProductAdapter.notifyDataSetChanged();
-                mProdutoMaisBarato = null;
+                mProductAdapter.clearList();
                 Toast.makeText(this, "Lista Limpa", Toast.LENGTH_SHORT).show();
                 return true;
         }

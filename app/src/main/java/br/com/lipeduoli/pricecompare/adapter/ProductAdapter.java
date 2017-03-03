@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -18,13 +19,11 @@ import br.com.lipeduoli.pricecompare.model.Product;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by liped on 05/07/2016.
- */
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> implements Serializable {
 
     private Context mContext;
     private List<Product> mProductList;
+    private Product mProdutoMaisBarato;
 
     public ProductAdapter(Context context, List<Product> products) {
         this.mContext = context;
@@ -34,7 +33,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_product, null, false);
-        return new ViewHolder(v);
+        return new ViewHolder(mContext, v);
     }
 
     @Override
@@ -67,7 +66,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
 
     public void addItem(Product product) {
-        mProductList.add(product);
+        Product produtoVerificado = verificaMenorValorProduto(product);
+        mProductList.add(produtoVerificado);
         notifyDataSetChanged();
     }
 
@@ -91,10 +91,67 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         @BindView(R.id.list_product_imageview_mais_barato)
         ImageView mMaisBarato;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final Context context, View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int position = getAdapterPosition(); // gets item position
+                    Product product = mProductList.get(position);
+                    if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
+                        // We can access the data within the views
+                        Toast.makeText(context, "Produto Deletado", Toast.LENGTH_SHORT).show();
+                        deleteProduct(position);
+                    }
+                    return true;
+                }
+            });
         }
 
+    }
+
+    private Product verificaMenorValorProduto(Product product) {
+        if (mProdutoMaisBarato == null){
+            mProdutoMaisBarato = product;
+        } else {
+            if (product.getValorPorPeso().compareTo(mProdutoMaisBarato.getValorPorPeso()) == -1){
+                mProductList.get(mProductList.indexOf(mProdutoMaisBarato)).setMenorValor(false);
+                product.setMenorValor(true);
+                mProdutoMaisBarato = product;
+                return product;
+            }
+        }
+        product.setMenorValor(false);
+        return product;
+    }
+
+    private void deleteProduct(int position) {
+        mProductList.remove(position);
+        recalculaProdutoMaisBarato();
+        notifyDataSetChanged();
+    }
+
+    private void recalculaProdutoMaisBarato() {
+        mProdutoMaisBarato = null;
+        for (Product p : mProductList) {
+            if (mProdutoMaisBarato == null){
+                p.setMenorValor(true);
+                mProdutoMaisBarato = p;
+            } else {
+                if (p.getValorPorPeso().compareTo(mProdutoMaisBarato.getValorPorPeso()) == -1){
+                    mProductList.get(mProductList.indexOf(mProdutoMaisBarato)).setMenorValor(false);
+                    p.setMenorValor(true);
+                    mProdutoMaisBarato = p;
+                }
+            }
+        }
+    }
+
+    public void clearList(){
+        mProductList.clear();
+        notifyDataSetChanged();
+        mProdutoMaisBarato = null;
     }
 }
