@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PriceCompare</string>
+    <string name="app_name">Price Compare</string>
     <string name="action_clean">Limpa Lista</string>
     <string name="list_peso">Quantidade: %1$s%2$s</string>
     <string name="list_preco">Preço: %s</string>
