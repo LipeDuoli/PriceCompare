@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         mProductAdapter = new ProductAdapter(this, new ArrayList<Product>());
         mProductListView.setHasFixedSize(true);
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
-        mProductListView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        mProductListView.addItemDecoration(new DividerItemDecoration(this));
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new LeftSwipeDelete(mProductAdapter));
         itemTouchHelper.attachToRecyclerView(mProductListView);
