@@ -94,20 +94,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public ViewHolder(final Context context, View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    int position = getAdapterPosition(); // gets item position
-                    Product product = mProductList.get(position);
-                    if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
-                        // We can access the data within the views
-                        Toast.makeText(context, "Produto Deletado", Toast.LENGTH_SHORT).show();
-                        deleteProduct(position);
-                    }
-                    return true;
-                }
-            });
         }
 
     }
@@ -127,7 +113,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         return product;
     }
 
-    private void deleteProduct(int position) {
+    public void deleteProduct(int position) {
         mProductList.remove(position);
         recalculaProdutoMaisBarato();
         notifyDataSetChanged();

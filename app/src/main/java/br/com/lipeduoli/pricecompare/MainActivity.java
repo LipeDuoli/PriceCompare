@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,12 +15,12 @@ import android.widget.Toast;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.lipeduoli.pricecompare.adapter.ProductAdapter;
 import br.com.lipeduoli.pricecompare.dialog.DialogAddProduct;
 import br.com.lipeduoli.pricecompare.model.Product;
 import br.com.lipeduoli.pricecompare.tools.DividerItemDecoration;
+import br.com.lipeduoli.pricecompare.tools.LeftSwipeDelete;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -49,8 +50,11 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         mProductListView.setHasFixedSize(true);
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
         mProductListView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
-        mProductListView.setAdapter(mProductAdapter);
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new LeftSwipeDelete(mProductAdapter));
+        itemTouchHelper.attachToRecyclerView(mProductListView);
+
+        mProductListView.setAdapter(mProductAdapter);
     }
 
     @Override
