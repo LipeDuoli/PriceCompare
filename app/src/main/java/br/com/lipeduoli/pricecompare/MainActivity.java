@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.lipeduoli.pricecompare.adapter.ProductAdapter;
 import br.com.lipeduoli.pricecompare.dialog.DialogAddProduct;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     RecyclerView mProductListView;
 
     private ProductAdapter mProductAdapter;
+    private List<Product> mProducsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,13 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        mProductAdapter = new ProductAdapter(this, new ArrayList<Product>());
+        if(savedInstanceState != null){
+            mProducsList = (List<Product>) savedInstanceState.getSerializable("products");
+        } else {
+            mProducsList = new ArrayList<>();
+        }
+
+        mProductAdapter = new ProductAdapter(this, mProducsList);
         mProductListView.setHasFixedSize(true);
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
         mProductListView.addItemDecoration(new DividerItemDecoration(this));
@@ -91,5 +99,11 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         }
 
         return false;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("products", (ArrayList<Product>) mProducsList);
     }
 }
