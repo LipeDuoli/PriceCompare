@@ -2,12 +2,8 @@ package br.com.lipeduoli.pricecompare.model;
 
 import java.math.BigDecimal;
 
-/**
- * Created by liped on 05/07/2016.
- */
 public class Product {
 
-    private BigDecimal valorPeso;
     private String nome;
     private BigDecimal preco;
     private int peso;
@@ -18,9 +14,8 @@ public class Product {
         this.nome = nome;
         this.preco = preco;
         this.peso = peso;
-        setTipo(tipo);
+        this.tipo = tipo;
         this.menorValor = false;
-        this.valorPeso = this.preco.divide(new BigDecimal(this.peso), 5, BigDecimal.ROUND_HALF_UP);
     }
 
     public BigDecimal getPreco() {
@@ -40,7 +35,10 @@ public class Product {
     }
 
     public BigDecimal getValorPorPeso() {
-        return valorPeso;
+        if(getTipo().equalsIgnoreCase("kg") || getTipo().equalsIgnoreCase("l") ){
+            return this.preco.divide(new BigDecimal(this.peso*1000), 5, BigDecimal.ROUND_HALF_UP);
+        }
+        return this.preco.divide(new BigDecimal(this.peso), 5, BigDecimal.ROUND_HALF_UP);
     }
 
     public boolean isMenorValor() {
@@ -51,15 +49,13 @@ public class Product {
         this.menorValor = menorValor;
     }
 
-    private void setTipo(String tipo) {
+    public String getTipoConvertido(){
         if ("kg".equalsIgnoreCase(tipo)){
-            peso = peso*1000;
-            this.tipo = "g";
+            return "g";
         } else if ("l".equalsIgnoreCase(tipo)){
-            peso = peso*1000;
-            this.tipo = "mL";
+            return "mL";
         } else {
-            this.tipo = tipo;
+            return tipo;
         }
     }
 }

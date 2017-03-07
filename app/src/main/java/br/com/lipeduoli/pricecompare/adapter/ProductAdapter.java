@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -33,7 +32,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_product, null, false);
-        return new ViewHolder(mContext, v);
+        return new ViewHolder(v);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.mPeso.setText(String.format(mContext.getString(R.string.list_peso), Integer.toString(product.getPeso()), product.getTipo()));
         holder.mPreco.setText(String.format(mContext.getString(R.string.list_preco), doubleToCurrency(product.getPreco(), 2)));
 
-        holder.mValorProduto.setText(String.format(mContext.getString(R.string.list_valor_produto), product.getTipo(), doubleToCurrency(product.getValorPorPeso(), 3)));
+        holder.mValorProduto.setText(String.format(mContext.getString(R.string.list_valor_produto), product.getTipoConvertido(), doubleToCurrency(product.getValorPorPeso(), 4)));
 
         if (product.isMenorValor()){
             holder.mMaisBarato.setVisibility(View.VISIBLE);
@@ -74,7 +73,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     private String doubleToCurrency(BigDecimal value, int numberOfDigits) {
         NumberFormat format = NumberFormat.getCurrencyInstance();
         format.setMinimumFractionDigits(numberOfDigits);
-        return format.format(value);
+        String s = format.format(value);
+        s = s.substring(0,2) + " " + s.substring(2, s.length());
+        return s;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -91,7 +92,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         @BindView(R.id.list_product_imageview_mais_barato)
         ImageView mMaisBarato;
 
-        public ViewHolder(final Context context, View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
