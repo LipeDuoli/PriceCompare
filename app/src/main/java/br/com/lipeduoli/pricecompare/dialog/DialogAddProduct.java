@@ -1,8 +1,7 @@
 package br.com.lipeduoli.pricecompare.dialog;
 
-
-import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -80,17 +79,6 @@ public class DialogAddProduct extends DialogFragment {
         return new Product(nome, preco, peso, tipoMarcado.getText().toString());
     }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (ProductDialogListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement ProductDialogListener");
-        }
-    }
-
     private boolean isEmpty(EditText etText) {
         return etText.getText().toString().trim().length() == 0;
     }
@@ -115,4 +103,16 @@ public class DialogAddProduct extends DialogFragment {
         }
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (ProductDialogListener) getActivity();
+        } catch (ClassCastException e) {
+            // The activity doesn't implement the interface, throw exception
+            throw new ClassCastException(context.toString()
+                    + " must implement NoticeDialogListener");
+        }
+
+    }
 }
