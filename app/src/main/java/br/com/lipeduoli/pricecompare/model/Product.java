@@ -1,8 +1,9 @@
 package br.com.lipeduoli.pricecompare.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Product {
+public class Product implements Serializable {
 
     private String nome;
     private BigDecimal preco;
