@@ -31,7 +31,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_product, null, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_product, parent, false);
         return new ViewHolder(v);
     }
 
@@ -54,7 +54,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         if (product.isMenorValor()){
             holder.mMaisBarato.setVisibility(View.VISIBLE);
         } else {
-            holder.mMaisBarato.setVisibility(View.INVISIBLE);
+            holder.mMaisBarato.setVisibility(View.GONE);
         }
     }
 

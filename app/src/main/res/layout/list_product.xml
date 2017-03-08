@@ -1,54 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_constrain"
     android:layout_width="match_parent"
-    android:layout_height="88dp"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="20dp"
-    android:paddingRight="16dp">
+    android:layout_height="88dp">
 
     <TextView
         android:id="@+id/list_product_textview_produto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:text="Produto 0"
         android:textSize="16sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/list_product_textview_peso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/list_product_textview_produto"
-        android:layout_toLeftOf="@+id/list_product_imageview_mais_barato"
-        android:text="@string/list_peso"
-        android:textSize="@dimen/list_product_size"/>
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/list_product_textview_preco"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/list_product_textview_preco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="2dp"
         android:text="@string/list_preco"
-        android:layout_below="@+id/list_product_textview_produto"
-        android:textSize="@dimen/list_product_size"/>
+        android:textSize="@dimen/list_product_size"
+        android:layout_marginStart="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/list_produto_textview_valor_produto"
+        app:layout_constraintLeft_toLeftOf="@+id/list_product_textview_produto"
+        app:layout_constraintTop_toBottomOf="@+id/list_product_textview_produto" />
 
     <TextView
         android:id="@+id/list_produto_textview_valor_produto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/list_product_textview_peso"
-        android:text="@string/list_valor_produto"/>
+        android:text="@string/list_valor_produto"
+        android:textSize="@dimen/list_product_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/list_product_textview_preco"
+        app:layout_constraintTop_toBottomOf="@+id/list_product_textview_preco" />
+
+    <TextView
+        android:id="@+id/list_product_textview_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:text="@string/list_peso"
+        android:textAlignment="textEnd"
+        android:gravity="end"
+        android:textSize="@dimen/list_product_size"
+        app:layout_constraintBottom_toBottomOf="@+id/list_product_imageview_mais_barato"
+        app:layout_constraintRight_toLeftOf="@+id/list_product_imageview_mais_barato"
+        app:layout_constraintTop_toTopOf="@+id/list_product_imageview_mais_barato"
+        app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
         android:id="@+id/list_product_imageview_mais_barato"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:src="@drawable/ic_check_circle"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:visibility="invisible"/>
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:contentDescription="Melhor Preço"
+        android:src="@drawable/ic_done"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
