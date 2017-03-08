@@ -101,6 +101,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     private Product verificaMenorValorProduto(Product product) {
         if (mProdutoMaisBarato == null){
+            product.setMenorValor(true);
             mProdutoMaisBarato = product;
         } else {
             if (product.getValorPorPeso().compareTo(mProdutoMaisBarato.getValorPorPeso()) == -1){
@@ -110,7 +111,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 return product;
             }
         }
-        product.setMenorValor(false);
         return product;
     }
 
