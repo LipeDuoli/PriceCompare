@@ -13,7 +13,9 @@
         android:id="@+id/activity_main_recyclerview_product_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_product">
+        tools:listitem="@layout/list_product"
+        android:paddingBottom="88dp"
+        android:clipToPadding="false">
 
     </android.support.v7.widget.RecyclerView>
 
