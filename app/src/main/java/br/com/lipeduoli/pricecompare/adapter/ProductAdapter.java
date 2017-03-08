@@ -47,9 +47,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         }
 
         holder.mPeso.setText(String.format(mContext.getString(R.string.list_peso), Integer.toString(product.getPeso()), product.getTipo()));
-        holder.mPreco.setText(String.format(mContext.getString(R.string.list_preco), doubleToCurrency(product.getPreco(), 2)));
+        holder.mPreco.setText(String.format(mContext.getString(R.string.list_preco), bigDecimalToCurrencyString(product.getPreco())));
 
-        holder.mValorProduto.setText(String.format(mContext.getString(R.string.list_valor_produto), product.getTipoConvertido(), doubleToCurrency(product.getValorPorPeso(), 4)));
+        holder.mValorProduto.setText(String.format(mContext.getString(R.string.list_valor_produto), product.getTipoConvertido(), bigDecimalToCurrencyString(product.getValorPorPeso())));
 
         if (product.isMenorValor()){
             holder.mMaisBarato.setVisibility(View.VISIBLE);
@@ -70,9 +70,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         notifyDataSetChanged();
     }
 
-    private String doubleToCurrency(BigDecimal value, int numberOfDigits) {
+    private String bigDecimalToCurrencyString(BigDecimal value) {
         NumberFormat format = NumberFormat.getCurrencyInstance();
-        format.setMinimumFractionDigits(numberOfDigits);
+        format.setMaximumFractionDigits(4);
         String s = format.format(value);
         s = s.substring(0,2) + " " + s.substring(2, s.length());
         return s;

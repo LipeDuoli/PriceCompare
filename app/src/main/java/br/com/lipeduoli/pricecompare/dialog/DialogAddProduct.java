@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -24,9 +25,6 @@ import br.com.lipeduoli.pricecompare.model.Product;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by liped on 06/07/2016.
- */
 public class DialogAddProduct extends DialogFragment {
 
     ProductDialogListener mListener;
@@ -42,9 +40,10 @@ public class DialogAddProduct extends DialogFragment {
     private View view;
 
     public interface ProductDialogListener {
-        public void onDialogPositiveClick(Product product);
+        void onDialogPositiveClick(Product product);
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -52,7 +51,6 @@ public class DialogAddProduct extends DialogFragment {
         view = inflater.inflate(R.layout.dialog_add_product, null);
         ButterKnife.bind(this, view);
         builder.setTitle("Adicionar Produto");
-//        mPreco.addTextChangedListener(new CurrencyTextWatcher());
         builder.setView(view)
                 .setPositiveButton("Adicionar", new DialogInterface.OnClickListener() {
                     @Override
@@ -102,7 +100,7 @@ public class DialogAddProduct extends DialogFragment {
         super.onStart();
         final AlertDialog d = (AlertDialog) getDialog();
         if (d != null) {
-            Button positiveButton = (Button) d.getButton(Dialog.BUTTON_POSITIVE);
+            Button positiveButton = d.getButton(Dialog.BUTTON_POSITIVE);
             positiveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
