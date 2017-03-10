@@ -1,34 +1,34 @@
 <resources>
 
     <!-- APP -->
-    <string name="app_name">Compare Preços</string>
+    <string name="app_name">Price Compare</string>
 
     <!-- Main Activity -->
-    <string name="action_clean">Limpa Lista</string>
-    <string name="action_clean_toast">Lista limpa</string>
-    <string name="limpar_lista_dica">Limpar lista</string>
-    <string name="limpar_lista_img_descricao">Seta apontando para cima</string>
-    <string name="adicionar_produto_dica">Adicionar produto</string>
-    <string name="adicionar_produto_img_descricao">Seta apontando para direita</string>
+    <string name="action_clean">Clean list</string>
+    <string name="action_clean_toast">List Clean</string>
+    <string name="limpar_lista_dica">Clean list</string>
+    <string name="limpar_lista_img_descricao">Arrow pointing up</string>
+    <string name="adicionar_produto_dica">Add product</string>
+    <string name="adicionar_produto_img_descricao">Arrow pointing right</string>
 
     <!-- Product Adapter -->
-    <string name="list_nome_produto">Produto %d</string>
-    <string name="list_peso">Quantidade: %1$s%2$s</string>
-    <string name="list_preco">Preço: %s</string>
-    <string name="list_valor_produto">Preço por %1$s: %2$s</string>
+    <string name="list_nome_produto">Product %d</string>
+    <string name="list_peso">Amount: %1$s%2$s</string>
+    <string name="list_preco">Price: %s</string>
+    <string name="list_valor_produto">Price per %1$s: %2$s</string>
 
     <!-- Dialog Product -->
-    <string name="dialog_title">Adicionar produto</string>
-    <string name="dialog_positive_button">Adicionar</string>
-    <string name="dialog_negative_button">Cancelar</string>
-    <string name="dialog_toast_campo_vazio">Preencha os campos com *</string>
-    <string name="dialog_nome">Nome</string>
-    <string name="dialog_preco">Preço*</string>
-    <string name="dialog_peso">Quantidade*</string>
-    <string name="g">g</string>
-    <string name="kg">Kg</string>
-    <string name="l">L</string>
-    <string name="ml">mL</string>
-    <string name="un">Un</string>
+    <string name="dialog_title">Add product</string>
+    <string name="dialog_positive_button">Add</string>
+    <string name="dialog_negative_button">Cancel</string>
+    <string name="dialog_toast_campo_vazio">Fill all fields with *</string>
+    <string name="dialog_nome">Name</string>
+    <string name="dialog_preco">Price*</string>
+    <string name="dialog_peso">Amount*</string>
+    <string name="g" translatable="false">g</string>
+    <string name="kg" translatable="false">Kg</string>
+    <string name="l" translatable="false">L</string>
+    <string name="ml" translatable="false">mL</string>
+    <string name="un" translatable="false">Un</string>
 
 </resources>
