@@ -73,7 +73,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         NumberFormat format = NumberFormat.getCurrencyInstance();
         format.setMaximumFractionDigits(4);
         String s = format.format(value);
-        s = s.substring(0,2) + " " + s.substring(2, s.length());
+//        Locale currentLocale = mContext.getResources().getConfiguration().locale;
+//        if(currentLocale.getCountry() == "BR"){
+//            s = s.substring(0,2) + " " + s.substring(2, s.length());
+//        }
         return s;
     }
 
