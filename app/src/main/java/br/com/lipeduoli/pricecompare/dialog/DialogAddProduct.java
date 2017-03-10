@@ -49,15 +49,15 @@ public class DialogAddProduct extends DialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         view = inflater.inflate(R.layout.dialog_add_product, null);
         ButterKnife.bind(this, view);
-        builder.setTitle("Adicionar Produto");
+        builder.setTitle(getString(R.string.dialog_title));
         builder.setView(view)
-                .setPositiveButton("Adicionar", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.dialog_positive_button), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 })
-                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getString(R.string.dialog_negative_button), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         DialogAddProduct.this.getDialog().cancel();
@@ -93,7 +93,7 @@ public class DialogAddProduct extends DialogFragment {
                 @Override
                 public void onClick(View v) {
                     if (isEmpty(mPeso) || isEmpty(mPreco) || mTipo.getCheckedRadioButtonId() == -1) {
-                        Toast.makeText(getContext(), "Preencha os campos com *", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), getString(R.string.dialog_toast_campo_vazio), Toast.LENGTH_SHORT).show();
                         return;
                     }
                     d.dismiss();

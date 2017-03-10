@@ -42,8 +42,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         if (!product.getNome().isEmpty()){
             holder.mProduto.setText(product.getNome());
         } else {
-            String nomeProduto = "Produto " + (position + 1);
-            holder.mProduto.setText(nomeProduto);
+            holder.mProduto.setText(String.format(mContext.getString(R.string.list_nome_produto), (position + 1)));
         }
 
         holder.mPeso.setText(String.format(mContext.getString(R.string.list_peso), Integer.toString(product.getPeso()), product.getTipo()));

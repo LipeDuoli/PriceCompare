@@ -10,14 +10,14 @@
         android:id="@+id/dialog_edittext_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
+        android:hint="@string/dialog_nome"
         android:textSize="20sp"/>
 
     <com.blackcat.currencyedittext.CurrencyEditText
         android:id="@+id/dialog_edittext_preco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Preço*"
+        android:hint="@string/dialog_preco"
         android:inputType="numberDecimal"
         android:textSize="20sp"/>
 
@@ -25,7 +25,7 @@
         android:id="@+id/dialog_edittext_peso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Quantidade*"
+        android:hint="@string/dialog_peso"
         android:inputType="number"
         android:textSize="20sp"/>
 

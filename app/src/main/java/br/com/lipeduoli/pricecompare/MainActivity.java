@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
             case R.id.action_clean:
                 mProductAdapter.clearList();
                 mTipsLayout.setVisibility(View.VISIBLE);
-                Toast.makeText(this, "Lista Limpa", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.action_clean_toast), Toast.LENGTH_SHORT).show();
                 return true;
         }
 
