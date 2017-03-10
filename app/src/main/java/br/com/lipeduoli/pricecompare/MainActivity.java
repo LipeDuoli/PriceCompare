@@ -1,6 +1,7 @@
 package br.com.lipeduoli.pricecompare;
 
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     FloatingActionButton fab;
     @BindView(R.id.activity_main_recyclerview_product_list)
     RecyclerView mProductListView;
+    @BindView(R.id.activity_main_tips)
+    ConstraintLayout mTipsLayout;
 
     private ProductAdapter mProductAdapter;
     private List<Product> mProducsList;
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
 
     @Override
     public void onDialogPositiveClick(Product product) {
+        if(mTipsLayout.getVisibility() == View.VISIBLE)
+            mTipsLayout.setVisibility(View.GONE);
         mProductAdapter.addItem(product);
     }
 
@@ -94,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         switch (item.getItemId()) {
             case R.id.action_clean:
                 mProductAdapter.clearList();
+                mTipsLayout.setVisibility(View.VISIBLE);
                 Toast.makeText(this, "Lista Limpa", Toast.LENGTH_SHORT).show();
                 return true;
         }
