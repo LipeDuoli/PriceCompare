@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     @Override
     protected void onResume() {
         super.onResume();
+        if (mProductAdapter.getItemCount() > 0){
+            mTipsLayout.setVisibility(View.GONE);
+        }
 
     }
 
