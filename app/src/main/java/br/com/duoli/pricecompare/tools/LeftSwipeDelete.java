@@ -1,9 +1,9 @@
-package br.com.lipeduoli.pricecompare.tools;
+package br.com.duoli.pricecompare.tools;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import br.com.lipeduoli.pricecompare.adapter.ProductAdapter;
+import br.com.duoli.pricecompare.adapter.ProductAdapter;
 
 public class LeftSwipeDelete extends ItemTouchHelper.SimpleCallback {
 

@@ -1,4 +1,4 @@
-package br.com.lipeduoli.pricecompare;
+package br.com.duoli.pricecompare;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

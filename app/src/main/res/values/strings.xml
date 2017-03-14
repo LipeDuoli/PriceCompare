@@ -31,4 +31,7 @@
     <string name="ml" translatable="false">mL</string>
     <string name="un" translatable="false">Un</string>
 
+    <!-- Ad -->
+    <string name="banner_ad_unit_id">ca-app-pub-9024902600072738/9959382409</string>
+
 </resources>

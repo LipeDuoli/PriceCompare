@@ -1,4 +1,4 @@
-package br.com.lipeduoli.pricecompare;
+package br.com.duoli.pricecompare;
 
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -18,11 +18,11 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.lipeduoli.pricecompare.adapter.ProductAdapter;
-import br.com.lipeduoli.pricecompare.dialog.DialogAddProduct;
-import br.com.lipeduoli.pricecompare.model.Product;
-import br.com.lipeduoli.pricecompare.tools.DividerItemDecoration;
-import br.com.lipeduoli.pricecompare.tools.LeftSwipeDelete;
+import br.com.duoli.pricecompare.adapter.ProductAdapter;
+import br.com.duoli.pricecompare.dialog.DialogAddProduct;
+import br.com.duoli.pricecompare.model.Product;
+import br.com.duoli.pricecompare.tools.DividerItemDecoration;
+import br.com.duoli.pricecompare.tools.LeftSwipeDelete;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -74,14 +74,12 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         if (mProductAdapter.getItemCount() > 0){
             mTipsLayout.setVisibility(View.GONE);
         }
-
     }
 
     @OnClick(R.id.fab)
     public void onClick(View view) {
         DialogAddProduct dialog = new DialogAddProduct();
         dialog.show(getSupportFragmentManager(), "productDialog");
-
     }
 
     @Override

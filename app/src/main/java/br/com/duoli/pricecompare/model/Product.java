@@ -1,4 +1,4 @@
-package br.com.lipeduoli.pricecompare.model;
+package br.com.duoli.pricecompare.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

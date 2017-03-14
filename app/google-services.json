@@ -1,43 +1,35 @@
 {
   "project_info": {
-    "project_number": "915476478287",
-    "firebase_url": "https://pricecompare-e0707.firebaseio.com",
-    "project_id": "pricecompare-e0707",
-    "storage_bucket": "pricecompare-e0707.appspot.com"
+    "project_number": "819772353134",
+    "firebase_url": "https://pricecompare-4c7cd.firebaseio.com",
+    "project_id": "pricecompare-4c7cd",
+    "storage_bucket": "pricecompare-4c7cd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:915476478287:android:b30e0e6ba1716c50",
+        "mobilesdk_app_id": "1:819772353134:android:af444e4d0ba8c732",
         "android_client_info": {
-          "package_name": "br.com.lipeduoli.pricecompare"
+          "package_name": "br.com.duoli.pricecompare"
         }
       },
       "oauth_client": [
         {
-          "client_id": "915476478287-1tp9tck8iinls44rb87b0i2cve7vae4i.apps.googleusercontent.com",
+          "client_id": "819772353134-cmaj9i0b7kunv16337afbq03k6su3v1e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "br.com.lipeduoli.pricecompare",
+            "package_name": "br.com.duoli.pricecompare",
             "certificate_hash": "ceab6b7c410aa9a589e2ef62a1e7ba834e990079"
           }
         },
         {
-          "client_id": "915476478287-e8dmm7srab0libqnjd157bqo5r9c15qe.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "br.com.lipeduoli.pricecompare",
-            "certificate_hash": "fec0de3ab4276fa82647c98685ce7572ab028d81"
-          }
-        },
-        {
-          "client_id": "915476478287-30gbkgos2ev6vv4eijirfprruna9ps1c.apps.googleusercontent.com",
+          "client_id": "819772353134-262clsrqqor0smtcqj1git00s6mauilk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyButFbsdXwOcL5SgRgGWLOeFqWR7VUjnEQ"
+          "current_key": "AIzaSyAhpauMmAxwmmy9kfjMsb9Cgc2VVenrZnE"
         }
       ],
       "services": {
@@ -48,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "915476478287-30gbkgos2ev6vv4eijirfprruna9ps1c.apps.googleusercontent.com",
+              "client_id": "819772353134-262clsrqqor0smtcqj1git00s6mauilk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

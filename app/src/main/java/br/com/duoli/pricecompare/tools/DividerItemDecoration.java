@@ -1,4 +1,4 @@
-package br.com.lipeduoli.pricecompare.tools;
+package br.com.duoli.pricecompare.tools;
 
 import android.content.Context;
 import android.content.res.TypedArray;

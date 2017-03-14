@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.lipeduoli.pricecompare">
+    package="br.com.duoli.pricecompare">
 
     <application
         android:allowBackup="false"

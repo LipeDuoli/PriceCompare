@@ -1,4 +1,4 @@
-package br.com.lipeduoli.pricecompare.dialog;
+package br.com.duoli.pricecompare.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -19,8 +19,8 @@ import com.blackcat.currencyedittext.CurrencyEditText;
 
 import java.math.BigDecimal;
 
-import br.com.lipeduoli.pricecompare.R;
-import br.com.lipeduoli.pricecompare.model.Product;
+import br.com.duoli.pricecompare.R;
+import br.com.duoli.pricecompare.model.Product;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

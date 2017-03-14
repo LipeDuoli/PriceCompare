@@ -1,4 +1,4 @@
-package br.com.lipeduoli.pricecompare.adapter;
+package br.com.duoli.pricecompare.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -13,8 +13,8 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.List;
 
-import br.com.lipeduoli.pricecompare.R;
-import br.com.lipeduoli.pricecompare.model.Product;
+import br.com.duoli.pricecompare.R;
+import br.com.duoli.pricecompare.model.Product;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
