@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     RecyclerView mProductListView;
     @BindView(R.id.activity_main_tips)
     ConstraintLayout mTipsLayout;
+    @BindView(R.id.adView)
+    AdView mAdView;
 
     private ProductAdapter mProductAdapter;
     private List<Product> mProducsList;
@@ -66,6 +70,10 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         itemTouchHelper.attachToRecyclerView(mProductListView);
 
         mProductListView.setAdapter(mProductAdapter);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
     }
 
     @Override
@@ -73,6 +81,25 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         super.onResume();
         if (mProductAdapter.getItemCount() > 0){
             mTipsLayout.setVisibility(View.GONE);
+        }
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mAdView != null) {
+            mAdView.destroy();
         }
     }
 
