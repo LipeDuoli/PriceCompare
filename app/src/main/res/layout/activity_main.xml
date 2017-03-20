@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="br.com.duoli.pricecompare.MainActivity"
-    android:id="@+id/coordinatorlayout">
+    tools:context="br.com.duoli.pricecompare.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/activity_main_coordinatorlayout"
         android:layout_marginBottom="50dp">
 
     <android.support.design.widget.AppBarLayout
@@ -50,7 +50,5 @@
         ads:adUnitId="@string/banner_ad_unit_id">
 
     </com.google.android.gms.ads.AdView>
-
-
 
 </android.support.design.widget.CoordinatorLayout>

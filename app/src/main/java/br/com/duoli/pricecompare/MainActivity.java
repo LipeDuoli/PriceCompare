@@ -2,6 +2,7 @@ package br.com.duoli.pricecompare;
 
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,9 +44,13 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     ConstraintLayout mTipsLayout;
     @BindView(R.id.adView)
     AdView mAdView;
+    @BindView(R.id.activity_main_coordinatorlayout)
+    CoordinatorLayout mCoordinatorLayout;
 
     private ProductAdapter mProductAdapter;
     private List<Product> mProducsList;
+
+    //private int mLayoutMargin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +78,36 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        /* codigo para o banner sumir depois de um tempo especifico
+
+        mAdView.setVisibility(View.VISIBLE);
+        final CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) mCoordinatorLayout.getLayoutParams();
+
+        if (mLayoutMargin == 0)
+            mLayoutMargin = layoutParams.bottomMargin;
+
+        layoutParams.bottomMargin = mLayoutMargin;
+        mCoordinatorLayout.setLayoutParams(layoutParams);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAdView.pause();
+                mAdView.setVisibility(View.GONE);
+                layoutParams.bottomMargin = 0;
+                mCoordinatorLayout.setLayoutParams(layoutParams);
+            }
+        }, 5000);
+
+         */
 
     }
 
