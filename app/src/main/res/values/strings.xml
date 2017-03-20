@@ -13,7 +13,7 @@
 
     <!-- Product Adapter -->
     <string name="list_nome_produto">Product %d</string>
-    <string name="list_peso">Amount: %1$s%2$s</string>
+    <string name="list_peso">Quantity: %1$s%2$s</string>
     <string name="list_preco">Price: %s</string>
     <string name="list_valor_produto">Price per %1$s: %2$s</string>
 
@@ -24,7 +24,7 @@
     <string name="dialog_toast_campo_vazio">Fill all fields with *</string>
     <string name="dialog_nome">Name</string>
     <string name="dialog_preco">Price*</string>
-    <string name="dialog_peso">Amount*</string>
+    <string name="dialog_peso">Quantity*</string>
     <string name="g" translatable="false">g</string>
     <string name="kg" translatable="false">Kg</string>
     <string name="l" translatable="false">L</string>
