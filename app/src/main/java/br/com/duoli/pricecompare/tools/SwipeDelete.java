@@ -5,7 +5,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 import br.com.duoli.pricecompare.adapter.ProductAdapter;
 
-public class LeftSwipeDelete extends ItemTouchHelper.SimpleCallback {
+public class SwipeDelete extends ItemTouchHelper.SimpleCallback {
 
     private ProductAdapter mAdapter;
 
@@ -26,8 +26,8 @@ public class LeftSwipeDelete extends ItemTouchHelper.SimpleCallback {
      *                  {@link #UP} and {@link #DOWN}.
      */
 
-    public LeftSwipeDelete(ProductAdapter adapter){
-        super(0, ItemTouchHelper.LEFT);
+    public SwipeDelete(ProductAdapter adapter){
+        super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
 
         mAdapter = adapter;
     }

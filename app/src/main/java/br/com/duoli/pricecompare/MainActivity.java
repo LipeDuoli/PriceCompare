@@ -25,7 +25,7 @@ import br.com.duoli.pricecompare.adapter.ProductAdapter;
 import br.com.duoli.pricecompare.dialog.DialogAddProduct;
 import br.com.duoli.pricecompare.model.Product;
 import br.com.duoli.pricecompare.tools.DividerItemDecoration;
-import br.com.duoli.pricecompare.tools.LeftSwipeDelete;
+import br.com.duoli.pricecompare.tools.SwipeDelete;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
         mProductListView.addItemDecoration(new DividerItemDecoration(this));
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new LeftSwipeDelete(mProductAdapter));
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeDelete(mProductAdapter));
         itemTouchHelper.attachToRecyclerView(mProductListView);
 
         mProductListView.setAdapter(mProductAdapter);
