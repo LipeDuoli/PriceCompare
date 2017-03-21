@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
         mProductListView.addItemDecoration(new DividerItemDecoration(this));
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeDelete(mProductAdapter));
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeDelete(mProductAdapter, mTipsLayout));
         itemTouchHelper.attachToRecyclerView(mProductListView);
 
         mProductListView.setAdapter(mProductAdapter);
