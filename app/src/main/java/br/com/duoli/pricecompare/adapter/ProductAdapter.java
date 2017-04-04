@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
 
@@ -44,8 +45,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         } else {
             holder.mProduto.setText(String.format(mContext.getString(R.string.list_nome_produto), (position + 1)));
         }
+        DecimalFormat formatter = new DecimalFormat("#.###");
 
-        holder.mPeso.setText(String.format(mContext.getString(R.string.list_peso), Integer.toString(product.getPeso()), product.getTipo()));
+        holder.mPeso.setText(String.format(mContext.getString(R.string.list_peso), formatter.format(product.getPeso()), product.getTipo()));
         holder.mPreco.setText(String.format(mContext.getString(R.string.list_preco), bigDecimalToCurrencyString(product.getPreco())));
 
         holder.mValorProduto.setText(String.format(mContext.getString(R.string.list_valor_produto), product.getTipoConvertido(), bigDecimalToCurrencyString(product.getValorPorPeso())));

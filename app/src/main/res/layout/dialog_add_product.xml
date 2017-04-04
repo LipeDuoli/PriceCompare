@@ -26,8 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/dialog_peso"
-        android:inputType="number"
-        android:textSize="20sp"/>
+        android:inputType="number|numberDecimal"
+        android:textSize="20sp" />
 
     <RadioGroup
         android:id="@+id/dialog_radiogroup_tipo"

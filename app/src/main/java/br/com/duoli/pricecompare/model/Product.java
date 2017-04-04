@@ -7,11 +7,11 @@ public class Product implements Serializable {
 
     private String nome;
     private BigDecimal preco;
-    private int peso;
+    private double peso;
     private String tipo;
     private boolean menorValor;
 
-    public Product(String nome, BigDecimal preco, int peso, String tipo) {
+    public Product(String nome, BigDecimal preco, double peso, String tipo) {
         this.nome = nome;
         this.preco = preco;
         this.peso = peso;
@@ -23,7 +23,7 @@ public class Product implements Serializable {
         return preco;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 

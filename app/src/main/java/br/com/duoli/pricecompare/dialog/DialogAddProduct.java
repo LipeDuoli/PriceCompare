@@ -71,7 +71,7 @@ public class DialogAddProduct extends DialogFragment {
         String nome = mNome.getText().toString();
 
         BigDecimal preco = BigDecimal.valueOf(mPreco.getRawValue(), 2);
-        int peso = Integer.valueOf(mPeso.getText().toString());
+        double peso = Double.valueOf(mPeso.getText().toString());
 
         int checkedRadioButtonId = mTipo.getCheckedRadioButtonId();
         RadioButton tipoMarcado = (RadioButton) view.findViewById(checkedRadioButtonId);
