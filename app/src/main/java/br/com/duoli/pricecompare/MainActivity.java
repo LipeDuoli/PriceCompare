@@ -117,25 +117,6 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
         if (mProductAdapter.getItemCount() > 0){
             mTipsLayout.setVisibility(View.GONE);
         }
-        if (mAdView != null) {
-            mAdView.resume();
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (mAdView != null) {
-            mAdView.pause();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mAdView != null) {
-            mAdView.destroy();
-        }
     }
 
     @OnClick(R.id.fab)
@@ -174,5 +155,10 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable("products", (ArrayList<Product>) mProducsList);
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }
