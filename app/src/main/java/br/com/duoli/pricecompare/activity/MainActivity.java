@@ -3,7 +3,6 @@ package br.com.duoli.pricecompare.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,7 +23,6 @@ import java.util.List;
 
 import br.com.duoli.pricecompare.R;
 import br.com.duoli.pricecompare.adapter.ProductAdapter;
-import br.com.duoli.pricecompare.dialog.DialogAddProduct;
 import br.com.duoli.pricecompare.model.Product;
 import br.com.duoli.pricecompare.tools.DividerItemDecoration;
 import br.com.duoli.pricecompare.tools.SwipeDelete;
@@ -32,7 +30,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements DialogAddProduct.ProductDialogListener {
+public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 10;
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -47,13 +45,9 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     ConstraintLayout mTipsLayout;
     @BindView(R.id.adView)
     AdView mAdView;
-    @BindView(R.id.activity_main_coordinatorlayout)
-    CoordinatorLayout mCoordinatorLayout;
 
     private ProductAdapter mProductAdapter;
     private List<Product> mProducsList;
-
-    //private int mLayoutMargin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,36 +79,6 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-
-        /* codigo para o banner sumir depois de um tempo especifico
-
-        mAdView.setVisibility(View.VISIBLE);
-        final CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) mCoordinatorLayout.getLayoutParams();
-
-        if (mLayoutMargin == 0)
-            mLayoutMargin = layoutParams.bottomMargin;
-
-        layoutParams.bottomMargin = mLayoutMargin;
-        mCoordinatorLayout.setLayoutParams(layoutParams);
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mAdView.pause();
-                mAdView.setVisibility(View.GONE);
-                layoutParams.bottomMargin = 0;
-                mCoordinatorLayout.setLayoutParams(layoutParams);
-            }
-        }, 5000);
-
-         */
-
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         if (mProductAdapter.getItemCount() > 0){
@@ -126,15 +90,6 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     public void onClick(View view) {
         Intent intentAddProduct = new Intent(this, AddProductActivity.class);
         startActivityForResult(intentAddProduct, REQUEST_CODE);
-//        DialogAddProduct dialog = new DialogAddProduct();
-//        dialog.show(getSupportFragmentManager(), "productDialog");
-    }
-
-    @Override
-    public void onDialogPositiveClick(Product product) {
-        if(mTipsLayout.getVisibility() == View.VISIBLE)
-            mTipsLayout.setVisibility(View.GONE);
-        mProductAdapter.addItem(product);
     }
 
     @Override
