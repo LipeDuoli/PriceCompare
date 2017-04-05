@@ -21,11 +21,13 @@
     <string name="dialog_title">Adicionar produto</string>
     <string name="dialog_positive_button">Adicionar</string>
     <string name="dialog_negative_button">Cancelar</string>
-    <string name="dialog_toast_campo_vazio">Preencha os campos com *</string>
+    <string name="dialog_toast_campo_vazio">Campos com * são obrigatórios</string>
     <string name="dialog_nome">Nome</string>
-    <string name="dialog_preco">Preço*</string>
-    <string name="dialog_peso">Quantidade*</string>
+    <string name="dialog_preco">Preço *</string>
+    <string name="dialog_peso">Quantidade *</string>
     <string name="pack">Embalagem</string>
-    <string name="pack_units">Unidades na embalagem</string>
+    <string name="pack_units">Unidades na embalagem *</string>
+    <string name="product_save_icon_title">Salvar produto</string>
+    <string name="required_field">* indica campos obrigatórios</string>
 
 </resources>

@@ -1,5 +1,6 @@
-package br.com.duoli.pricecompare;
+package br.com.duoli.pricecompare.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -21,6 +22,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.duoli.pricecompare.R;
 import br.com.duoli.pricecompare.adapter.ProductAdapter;
 import br.com.duoli.pricecompare.dialog.DialogAddProduct;
 import br.com.duoli.pricecompare.model.Product;
@@ -32,6 +34,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements DialogAddProduct.ProductDialogListener {
 
+    private static final int REQUEST_CODE = 10;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     @BindView(R.id.toolbar)
@@ -121,8 +124,10 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
 
     @OnClick(R.id.fab)
     public void onClick(View view) {
-        DialogAddProduct dialog = new DialogAddProduct();
-        dialog.show(getSupportFragmentManager(), "productDialog");
+        Intent intentAddProduct = new Intent(this, AddProductActivity.class);
+        startActivityForResult(intentAddProduct, REQUEST_CODE);
+//        DialogAddProduct dialog = new DialogAddProduct();
+//        dialog.show(getSupportFragmentManager(), "productDialog");
     }
 
     @Override
@@ -155,6 +160,16 @@ public class MainActivity extends AppCompatActivity implements DialogAddProduct.
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable("products", (ArrayList<Product>) mProducsList);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+            if(data.hasExtra("produto")){
+                Product produto = (Product) data.getExtras().getSerializable("produto");
+                mProductAdapter.addItem(produto);
+            }
+        }
     }
 
     @Override

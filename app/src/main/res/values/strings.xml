@@ -21,12 +21,13 @@
     <string name="dialog_title">Add product</string>
     <string name="dialog_positive_button">Add</string>
     <string name="dialog_negative_button">Cancel</string>
-    <string name="dialog_toast_campo_vazio">Fill all fields with *</string>
+    <string name="dialog_toast_campo_vazio">Fields with * are required</string>
     <string name="dialog_nome">Name</string>
-    <string name="dialog_preco">Price*</string>
-    <string name="dialog_peso">Quantity*</string>
-    <string name="pack_units">Units in the package</string>
+    <string name="dialog_preco">Price *</string>
+    <string name="dialog_peso">Quantity *</string>
+    <string name="pack_units">Units in the package *</string>
     <string name="pack">Package</string>
+    <string name="product_save_icon_title">Save product</string>
     <string name="g" translatable="false">g</string>
     <string name="kg" translatable="false">Kg</string>
     <string name="l" translatable="false">L</string>
@@ -35,5 +36,6 @@
 
     <!-- Ad -->
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-9024902600072738/9959382409</string>
+    <string name="required_field">* indicates required field</string>
 
 </resources>
