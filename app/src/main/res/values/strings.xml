@@ -25,6 +25,8 @@
     <string name="dialog_nome">Name</string>
     <string name="dialog_preco">Price*</string>
     <string name="dialog_peso">Quantity*</string>
+    <string name="pack_units">Units in the package</string>
+    <string name="pack">Package</string>
     <string name="g" translatable="false">g</string>
     <string name="kg" translatable="false">Kg</string>
     <string name="l" translatable="false">L</string>

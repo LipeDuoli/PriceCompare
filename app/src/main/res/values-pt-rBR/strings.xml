@@ -25,5 +25,7 @@
     <string name="dialog_nome">Nome</string>
     <string name="dialog_preco">Preço*</string>
     <string name="dialog_peso">Quantidade*</string>
+    <string name="pack">Embalagem</string>
+    <string name="pack_units">Unidades na embalagem</string>
 
 </resources>
