@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mProductListView.setLayoutManager(new LinearLayoutManager(this));
         mProductListView.addItemDecoration(new DividerItemDecoration(this));
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeDelete(mProductAdapter, mTipsLayout));
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeDelete(this, mProductAdapter, mTipsLayout));
         itemTouchHelper.attachToRecyclerView(mProductListView);
 
         mProductListView.setAdapter(mProductAdapter);
