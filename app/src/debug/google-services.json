@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "819772353134",
+    "firebase_url": "https://pricecompare-4c7cd.firebaseio.com",
+    "project_id": "pricecompare-4c7cd",
+    "storage_bucket": "pricecompare-4c7cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819772353134:android:af444e4d0ba8c732",
+        "android_client_info": {
+          "package_name": "br.com.duoli.pricecompare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819772353134-vdee9506i5dvfvk8i11ugllbiafmbf7j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.duoli.pricecompare",
+            "certificate_hash": "27aae628ab514dbf3f2e4dc3bda8a78782384bac"
+          }
+        },
+        {
+          "client_id": "819772353134-cmaj9i0b7kunv16337afbq03k6su3v1e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.duoli.pricecompare",
+            "certificate_hash": "ceab6b7c410aa9a589e2ef62a1e7ba834e990079"
+          }
+        },
+        {
+          "client_id": "819772353134-262clsrqqor0smtcqj1git00s6mauilk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhpauMmAxwmmy9kfjMsb9Cgc2VVenrZnE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819772353134-262clsrqqor0smtcqj1git00s6mauilk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819772353134:android:c3f962da2be307d3",
+        "android_client_info": {
+          "package_name": "br.com.duoli.pricecompare.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819772353134-262clsrqqor0smtcqj1git00s6mauilk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhpauMmAxwmmy9kfjMsb9Cgc2VVenrZnE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
