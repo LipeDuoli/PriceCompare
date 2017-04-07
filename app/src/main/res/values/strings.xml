@@ -17,22 +17,20 @@
     <string name="list_preco">Price: %s</string>
     <string name="list_valor_produto">Price per %1$s: %2$s</string>
 
-    <!-- Dialog Product -->
-    <string name="dialog_title">Add product</string>
-    <string name="dialog_positive_button">Add</string>
-    <string name="dialog_negative_button">Cancel</string>
-    <string name="dialog_toast_campo_vazio">Fields with * are required</string>
-    <string name="dialog_nome">Name</string>
-    <string name="dialog_preco">Price *</string>
-    <string name="dialog_peso">Quantity *</string>
-    <string name="pack_units">Units in the package *</string>
-    <string name="pack">Package</string>
-    <string name="product_save_icon_title">Save product</string>
-    <string name="g" translatable="false">g</string>
-    <string name="kg" translatable="false">Kg</string>
-    <string name="l" translatable="false">L</string>
-    <string name="ml" translatable="false">mL</string>
-    <string name="un" translatable="false">Un</string>
+    <!-- Add Product Activity -->
+    <string name="add_product_title">Add product</string>
+    <string name="add_product_toast_campo_vazio">Fields with * are required</string>
+    <string name="add_product_nome">Name</string>
+    <string name="add_product_preco">Price *</string>
+    <string name="add_product_peso">Quantity *</string>
+    <string name="add_product_pack_units">Units in the package *</string>
+    <string name="add_product_pack">Package</string>
+    <string name="add_product_save_icon_title">Save product</string>
+    <string name="add_product_g" translatable="false">g</string>
+    <string name="add_product_kg" translatable="false">Kg</string>
+    <string name="add_product_l" translatable="false">L</string>
+    <string name="add_product_ml" translatable="false">mL</string>
+    <string name="add_product_un" translatable="false">Un</string>
 
     <!-- Ad -->
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-9024902600072738/9959382409</string>

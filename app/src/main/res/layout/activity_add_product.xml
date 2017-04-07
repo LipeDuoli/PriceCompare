@@ -45,7 +45,7 @@
                     android:id="@+id/activity_product_edittext_nome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/dialog_nome"
+                    android:hint="@string/add_product_nome"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:textSize="20sp" />
@@ -69,7 +69,7 @@
                     android:id="@+id/activity_product_edittext_preco"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/dialog_preco"
+                    android:hint="@string/add_product_preco"
                     android:inputType="numberDecimal"
                     android:textSize="20sp" />
 
@@ -92,7 +92,7 @@
                     android:id="@+id/activity_product_edittext_peso"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/dialog_peso"
+                    android:hint="@string/add_product_peso"
                     android:imeOptions="actionDone"
                     android:inputType="number|numberDecimal"
                     android:textSize="20sp" />
@@ -108,7 +108,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 android:onClick="onCheckboxClicked"
-                android:text="@string/pack"
+                android:text="@string/add_product_pack"
                 app:layout_constraintBottom_toBottomOf="@+id/activity_product_edittext_peso_layout"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/activity_product_edittext_peso_layout" />
@@ -132,35 +132,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/kg" />
+                    android:text="@string/add_product_kg" />
 
                 <RadioButton
                     android:id="@+id/activity_product_radiobutton_g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/g" />
+                    android:text="@string/add_product_g" />
 
                 <RadioButton
                     android:id="@+id/activity_product_radiobutton_l"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/l" />
+                    android:text="@string/add_product_l" />
 
                 <RadioButton
                     android:id="@+id/activity_product_radiobutton_ml"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ml" />
+                    android:text="@string/add_product_ml" />
 
                 <RadioButton
                     android:id="@+id/activity_product_radiobutton_un"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/un" />
+                    android:text="@string/add_product_un" />
 
             </RadioGroup>
 
@@ -181,7 +181,7 @@
                     android:id="@+id/activity_product_editText_qtunits"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/pack_units"
+                    android:hint="@string/add_product_pack_units"
                     android:imeOptions="actionDone"
                     android:inputType="number"
                     android:textSize="20sp"

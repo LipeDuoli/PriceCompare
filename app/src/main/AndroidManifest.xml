@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".activity.AddProductActivity"
-            android:label="@string/dialog_title">
+            android:label="@string/add_product_title">
         </activity>
     </application>
 

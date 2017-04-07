@@ -17,17 +17,15 @@
     <string name="list_preco">Preço: %s</string>
     <string name="list_valor_produto">Preço por %1$s: %2$s</string>
 
-    <!-- Dialog Product -->
-    <string name="dialog_title">Adicionar produto</string>
-    <string name="dialog_positive_button">Adicionar</string>
-    <string name="dialog_negative_button">Cancelar</string>
-    <string name="dialog_toast_campo_vazio">Campos com * são obrigatórios</string>
-    <string name="dialog_nome">Nome</string>
-    <string name="dialog_preco">Preço *</string>
-    <string name="dialog_peso">Quantidade *</string>
-    <string name="pack">Embalagem</string>
-    <string name="pack_units">Unidades na embalagem *</string>
-    <string name="product_save_icon_title">Salvar produto</string>
+    <!-- Add Product Activity -->
+    <string name="add_product_title">Adicionar produto</string>
+    <string name="add_product_toast_campo_vazio">Campos com * são obrigatórios</string>
+    <string name="add_product_nome">Nome</string>
+    <string name="add_product_preco">Preço *</string>
+    <string name="add_product_peso">Quantidade *</string>
+    <string name="add_product_pack">Embalagem</string>
+    <string name="add_product_pack_units">Unidades na embalagem *</string>
+    <string name="add_product_save_icon_title">Salvar produto</string>
     <string name="required_field">* indica campos obrigatórios</string>
 
 </resources>

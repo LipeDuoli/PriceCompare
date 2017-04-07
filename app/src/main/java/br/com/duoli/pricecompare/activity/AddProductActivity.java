@@ -61,7 +61,7 @@ public class AddProductActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_save:
                 if (!allFieldsFilled()) {
-                    Toast.makeText(this, getString(R.string.dialog_toast_campo_vazio), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.add_product_toast_campo_vazio), Toast.LENGTH_SHORT).show();
                     return false;
                 }
                 Intent resultIntent = new Intent();
